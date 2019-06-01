@@ -62,10 +62,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-hexo" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-testAritcle" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/05/31/hexo/" class="article-date">
-  <time datetime="2019-05-31T10:30:40.617Z" itemprop="datePublished">2019-05-31</time>
+    <a href="/2019/06/01/testAritcle/" class="article-date">
+  <time datetime="2019-06-01T10:16:02.488Z" itemprop="datePublished">2019-06-01</time>
 </a>
     
   </div>
@@ -74,102 +74,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="title-Hexo-github-pages-建立个人博客"><a href="#title-Hexo-github-pages-建立个人博客" class="headerlink" title="  title:Hexo + github pages 建立个人博客"></a>  title:Hexo + github pages 建立个人博客</h2><p>  很久很久以前，自从百度把百度空间搞没了之后，便再也没碰过个人博客一类的东西，最近又起了这个念头，出于省钱和省事的目的，博客框架选用了Hexo，站点则选用托管到Github Pages的方式。</p>
-<p>  主流建站方式比较：    </p>
-<table>
-<thead>
-<tr>
-<th align="center">方式</th>
-<th align="center">技术门槛</th>
-<th align="center">服务器购买</th>
-<th align="center">服务器配置</th>
-<th align="center">域名备案</th>
-<th align="center">访问速度</th>
-<th align="center">费用</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">WordPress</td>
-<td align="center">中</td>
-<td align="center">需要</td>
-<td align="center">自行配置</td>
-<td align="center">可免</td>
-<td align="center">视服务器而定</td>
-<td align="center">视服务器而定</td>
-</tr>
-<tr>
-<td align="center">Jekyll</td>
-<td align="center">中</td>
-<td align="center">不用</td>
-<td align="center">GitHub Page</td>
-<td align="center">可免</td>
-<td align="center">较快</td>
-<td align="center">低</td>
-</tr>
-<tr>
-<td align="center">Hexo</td>
-<td align="center">中低</td>
-<td align="center">不用</td>
-<td align="center">GitHub Page</td>
-<td align="center">可免</td>
-<td align="center">较快</td>
-<td align="center">低</td>
-</tr>
-<tr>
-<td align="center">Ghost</td>
-<td align="center">低</td>
-<td align="center">不用</td>
-<td align="center">不用</td>
-<td align="center">可免</td>
-<td align="center">较快</td>
-<td align="center">高</td>
-</tr>
-<tr>
-<td align="center">Farbox</td>
-<td align="center">低</td>
-<td align="center">不用</td>
-<td align="center">不用</td>
-<td align="center">可免</td>
-<td align="center">快</td>
-<td align="center">中</td>
-</tr>
-<tr>
-<td align="center">（from <a href="https://zoomyale.com/2016/why_blogging）" target="_blank" rel="noopener">https://zoomyale.com/2016/why_blogging）</a></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-</tbody></table>
-<p>  <strong>前置条件</strong><br>  使用Hexo + github pages搭建博客的前置条件，安装Git和Node.js<br>  其中Git是使用Github pages所必须的，而Node.js是Hexo所必须的</p>
-<p>  安装指路：<br>  <a href="https://git-scm.com/book/zh/v2/起步-安装-Git" title="Git安装" target="_blank" rel="noopener">Git安装</a><br>  <a href="https://www.runoob.com/nodejs/nodejs-install-setup.html" title="Node.js安装" target="_blank" rel="noopener">Node.js安装</a></p>
-<p>  上面两个前置工具搞定之后，就可以着手配置网站环境了  </p>
-<p>   <strong>github pages初始化</strong> </p>
-<p>   要想使用Github Pages， 首先需要在<a href="https://github.com" target="_blank" rel="noopener">https://github.com</a> 拥有一个账号，并且创建一个名为 你的GitHub用户名.github.io 的仓库(Repository)<br>   ,找不到地方的可以点<a href="https://github.com/new" title="创建仓库" target="_blank" rel="noopener">这里</a><br>   然后使用git将网站页面推送到仓库中，如果配置正确的话，推送过后，打开 <a href="http://username.github.io" target="_blank" rel="noopener">http://username.github.io</a> (username为你的用户名)，便可以看到你的站点</p>
-<p>   如果习惯使用命令行的话，可以照抄官方教程里的命令，当然，使用前需要了解下git基本指令的意义，包括 clone add commit push pull, 这里就不再赘述。如果不习惯命令行的操作方式，也可以去官网下载一个github的客户端，使用客户端来更新网页文件。<br>   <a href="https://pages.github.com/" target="_blank" rel="noopener">github pages官方教程</a></p>
-<p>   网站默认会解析到仓库根目录下的index.html，可以先上传一个简单的index.html页面来测试github pages是否正确配置<br>   以官方教程为例，下面这段指令执行成功之后，打开 <a href="http://username.github.io" target="_blank" rel="noopener">http://username.github.io</a> (username为你的用户名)，你就会看到一个写着”Hello World” 的页面了   </p>
-<pre><code>git clone https://github.com/username/username.github.io 
-cd username.github.io
-echo &quot;Hello World&quot; &gt; index.html
-git add --all
-git commit -m &quot;Initial commit&quot;
-git push -u origin master</code></pre><p>   <img src="/Users/fengruyi/Code/Noloty-PROJECT/noloty-secret-garden/src/main/resources/img/helloworld.png" alt="title"></p>
-<p>   <strong>Hexo初始化</strong><br>   首要做的还是装软件</p>
-<p>   安装Hexo,在终端里输入以下命令<br>   sudo npm install hexo-cli -g</p>
-<p>   执行完毕后输入hexo -v, 展示出hexo的版本信息就是安装成功了</p>
-<p>   之后进入到你想放置博客的路径下，使用下面的命令<br>   hexo init blog //初始化博客项目</p>
-<p>   cd blog //进入刚刚初始化的博客目录</p>
-<p>   hexo server //启动博客</p>
-<p>   正常情况下，输入hexo server会打印出以下信息  </p>
-<pre><code>INFO  Start processing
-INFO  Hexo is running at http://localhost:4000 . Press Ctrl+C to stop.  </code></pre><p>   此时在浏览器输入<a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a> 便能看到Hexo的HelloWorld页面<br>   <img src="/Users/fengruyi/Code/Noloty-PROJECT/noloty-secret-garden/src/main/resources/img/hexoHelloworld.png" alt="title"></p>
+        <h2 id="title-测试文章"><a href="#title-测试文章" class="headerlink" title=" title:测试文章"></a> title:测试文章</h2><p> 拉狗梗图</p>
+<p><img src="https://raw.githubusercontent.com/NolotySara/pictures/master/lap.jpg" alt></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/31/hexo/" data-id="cjwby2r3g0002ar3ojf3vb375" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/06/01/testAritcle/" data-id="cjwdhkyql0002gp3oj89oqn57" class="article-share-link">Share</a>
       
       
     </footer>
@@ -179,9 +90,9 @@ INFO  Hexo is running at http://localhost:4000 . Press Ctrl+C to stop.  </code><
 
 
   
-    <article id="post-My-New-Post" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-Test" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/05/31/My-New-Post/" class="article-date">
+    <a href="/2019/05/31/Test/" class="article-date">
   <time datetime="2019-05-31T10:27:10.000Z" itemprop="datePublished">2019-05-31</time>
 </a>
     
@@ -193,7 +104,7 @@ INFO  Hexo is running at http://localhost:4000 . Press Ctrl+C to stop.  </code><
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/31/My-New-Post/">My New Post</a>
+      <a class="article-title" href="/2019/05/31/Test/">My New Post</a>
     </h1>
   
 
@@ -201,11 +112,12 @@ INFO  Hexo is running at http://localhost:4000 . Press Ctrl+C to stop.  </code><
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>TestTest</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/31/My-New-Post/" data-id="cjwby13160000ar3ondzy6hed" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/31/Test/" data-id="cjwdhkyqd0000gp3oie04e5g0" class="article-share-link">Share</a>
       
       
     </footer>
@@ -254,7 +166,7 @@ INFO  Hexo is running at http://localhost:4000 . Press Ctrl+C to stop.  </code><
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/30/hello-world/" data-id="cjwby131a0001ar3ov143bnp4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/30/hello-world/" data-id="cjwdhkyqi0001gp3ovqyx7xne" class="article-share-link">Share</a>
       
       
     </footer>
@@ -282,7 +194,7 @@ INFO  Hexo is running at http://localhost:4000 . Press Ctrl+C to stop.  </code><
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li></ul>
     </div>
   </div>
 
@@ -295,11 +207,11 @@ INFO  Hexo is running at http://localhost:4000 . Press Ctrl+C to stop.  </code><
       <ul>
         
           <li>
-            <a href="/2019/05/31/hexo/">(no title)</a>
+            <a href="/2019/06/01/testAritcle/">(no title)</a>
           </li>
         
           <li>
-            <a href="/2019/05/31/My-New-Post/">My New Post</a>
+            <a href="/2019/05/31/Test/">My New Post</a>
           </li>
         
           <li>
