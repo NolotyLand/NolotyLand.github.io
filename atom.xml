@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://NolotyLand.github.io/"/>
-  <updated>2019-06-05T07:40:53.936Z</updated>
+  <updated>2019-06-05T12:55:37.115Z</updated>
   <id>http://NolotyLand.github.io/</id>
   
   <author>
@@ -15,31 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>Java8新特性</title>
-    <link href="http://NolotyLand.github.io/2019/06/05/java8-new-feature/"/>
-    <id>http://NolotyLand.github.io/2019/06/05/java8-new-feature/</id>
-    <published>2019-06-04T16:00:00.000Z</published>
-    <updated>2019-06-05T07:40:53.936Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="lambda表达式"><a href="#lambda表达式" class="headerlink" title="lambda表达式"></a>lambda表达式</h1><h1 id="函数式接口"><a href="#函数式接口" class="headerlink" title="函数式接口"></a>函数式接口</h1><h1 id="方法引用"><a href="#方法引用" class="headerlink" title="方法引用"></a>方法引用</h1><h1 id="新API"><a href="#新API" class="headerlink" title="新API"></a>新API</h1><h2 id="Stream-API"><a href="#Stream-API" class="headerlink" title="Stream API"></a>Stream API</h2><h2 id="Date-Time-API"><a href="#Date-Time-API" class="headerlink" title="Date/Time API"></a>Date/Time API</h2><h2 id="Base64-API"><a href="#Base64-API" class="headerlink" title="Base64 API"></a>Base64 API</h2><h2 id="Optional-Class"><a href="#Optional-Class" class="headerlink" title="Optional Class"></a>Optional Class</h2><h1 id="新工具"><a href="#新工具" class="headerlink" title="新工具"></a>新工具</h1><h1 id="Nashorn-JavaScript-引擎"><a href="#Nashorn-JavaScript-引擎" class="headerlink" title="Nashorn, JavaScript 引擎"></a>Nashorn, JavaScript 引擎</h1><h1 id="metaSpace"><a href="#metaSpace" class="headerlink" title="metaSpace"></a>metaSpace</h1>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;lambda表达式&quot;&gt;&lt;a href=&quot;#lambda表达式&quot; class=&quot;headerlink&quot; title=&quot;lambda表达式&quot;&gt;&lt;/a&gt;lambda表达式&lt;/h1&gt;&lt;h1 id=&quot;函数式接口&quot;&gt;&lt;a href=&quot;#函数式接口&quot; class=&quot;header
-      
-    
-    </summary>
-    
-      <category term="java8" scheme="http://NolotyLand.github.io/categories/java8/"/>
-    
-    
-      <category term="java8" scheme="http://NolotyLand.github.io/tags/java8/"/>
-    
-  </entry>
   
   <entry>
     <title>Hexo+Github Pages 建立个人博客</title>
