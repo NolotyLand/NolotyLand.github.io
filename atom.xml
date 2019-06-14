@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://NolotyLand.github.io/"/>
-  <updated>2019-06-14T21:01:59.337Z</updated>
+  <updated>2019-06-14T21:16:54.650Z</updated>
   <id>http://NolotyLand.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://NolotyLand.github.io/2019/06/14/hexo-fix-whitescreen/"/>
     <id>http://NolotyLand.github.io/2019/06/14/hexo-fix-whitescreen/</id>
     <published>2019-06-13T16:00:00.000Z</published>
-    <updated>2019-06-14T21:01:59.337Z</updated>
+    <updated>2019-06-14T21:16:54.650Z</updated>
     
     <content type="html"><![CDATA[<h2 id="现象·起因"><a href="#现象·起因" class="headerlink" title="现象·起因"></a>现象·起因</h2><p>   写了几篇文章草稿，本地测试发布发现偶尔会有文章页面白屏，无法加载出任何内容。有时删除或者增加一些字会能够正常加载页面。<br>   <img src="https://raw.githubusercontent.com/NolotyLand/pictures/master/white.png" alt></p><p>   一开始以为是文章内容里有特殊符号与页面渲染插件冲突造成的，但排查了文章内容后，并未发现有比较特殊的符号。<br>   删除一些文字能够正常渲染页面，但这些文字并无特殊之处。</p><p>   检查页面源代码时，终于发现原因，原来出问题的页面代码未加载完就被截断了<br>   <img src="https://raw.githubusercontent.com/NolotyLand/pictures/master/20190614015626.png" alt></p><h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>   参考 <a href="https://molunerfinn.com/make-a-hexo-theme/#Bug%E4%BB%A5%E5%8F%8A%E8%A7%A3%E5%86%B3" target="_blank" rel="noopener">Hexo主题开发经验杂谈</a><br>   此问题属于hexo的bug，在中文字符过多时会有几率显现。<br>   在hexo目录下的_config.yml里添加如下配置可以避免：</p><pre><code class="yml"><span class="attr">server:</span><span class="attr">  compress:</span> <span class="literal">true</span> <span class="comment"># 开启压缩</span></code></pre>]]></content>
     
