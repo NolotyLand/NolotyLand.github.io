@@ -18,8 +18,8 @@
   
   <entry>
     <title>错误使用SimpleDateFormat导致的并发bug排查历程</title>
-    <link href="http://NolotyLand.github.io/2019/06/21/bug-date/"/>
-    <id>http://NolotyLand.github.io/2019/06/21/bug-date/</id>
+    <link href="http://NolotyLand.github.io/bug-date/"/>
+    <id>http://NolotyLand.github.io/bug-date/</id>
     <published>2019-06-20T16:00:00.000Z</published>
     <updated>2019-06-21T19:04:28.844Z</updated>
     
@@ -45,8 +45,8 @@
   
   <entry>
     <title>HashMap的各种遍历方式</title>
-    <link href="http://NolotyLand.github.io/2019/06/21/hashmap-traverse/"/>
-    <id>http://NolotyLand.github.io/2019/06/21/hashmap-traverse/</id>
+    <link href="http://NolotyLand.github.io/hashmap-traverse/"/>
+    <id>http://NolotyLand.github.io/hashmap-traverse/</id>
     <published>2019-06-20T16:00:00.000Z</published>
     <updated>2019-06-21T20:24:44.917Z</updated>
     
@@ -73,8 +73,8 @@
   
   <entry>
     <title>解决Hexo中markdown文件生成的HTML页面白屏</title>
-    <link href="http://NolotyLand.github.io/2019/06/14/hexo-fix-whitescreen/"/>
-    <id>http://NolotyLand.github.io/2019/06/14/hexo-fix-whitescreen/</id>
+    <link href="http://NolotyLand.github.io/hexo-fix-whitescreen/"/>
+    <id>http://NolotyLand.github.io/hexo-fix-whitescreen/</id>
     <published>2019-06-13T16:00:00.000Z</published>
     <updated>2019-06-14T21:19:05.904Z</updated>
     
@@ -102,8 +102,8 @@
   
   <entry>
     <title>Hexo常用命令</title>
-    <link href="http://NolotyLand.github.io/2019/06/12/hexo-command/"/>
-    <id>http://NolotyLand.github.io/2019/06/12/hexo-command/</id>
+    <link href="http://NolotyLand.github.io/hexo-command/"/>
+    <id>http://NolotyLand.github.io/hexo-command/</id>
     <published>2019-06-11T16:00:00.000Z</published>
     <updated>2019-06-21T19:23:53.434Z</updated>
     
@@ -129,8 +129,8 @@
   
   <entry>
     <title>Java 8 新特性</title>
-    <link href="http://NolotyLand.github.io/2019/06/05/java8-new-feature/"/>
-    <id>http://NolotyLand.github.io/2019/06/05/java8-new-feature/</id>
+    <link href="http://NolotyLand.github.io/java8-new-feature/"/>
+    <id>http://NolotyLand.github.io/java8-new-feature/</id>
     <published>2019-06-04T16:00:00.000Z</published>
     <updated>2019-06-13T17:16:29.299Z</updated>
     
@@ -153,8 +153,8 @@
   
   <entry>
     <title>Hexo+Github Pages 建立个人博客</title>
-    <link href="http://NolotyLand.github.io/2019/06/01/hexo/"/>
-    <id>http://NolotyLand.github.io/2019/06/01/hexo/</id>
+    <link href="http://NolotyLand.github.io/hexo/"/>
+    <id>http://NolotyLand.github.io/hexo/</id>
     <published>2019-05-31T16:00:00.000Z</published>
     <updated>2019-06-14T21:07:26.908Z</updated>
     
@@ -232,8 +232,8 @@
   
   <entry>
     <title>Welcome to Noloty Land</title>
-    <link href="http://NolotyLand.github.io/2019/06/01/test-ariticle/"/>
-    <id>http://NolotyLand.github.io/2019/06/01/test-ariticle/</id>
+    <link href="http://NolotyLand.github.io/test-ariticle/"/>
+    <id>http://NolotyLand.github.io/test-ariticle/</id>
     <published>2019-05-31T16:00:00.000Z</published>
     <updated>2019-06-13T15:07:53.790Z</updated>
     
