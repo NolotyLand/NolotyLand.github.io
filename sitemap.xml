@@ -2,6 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://NolotyLand.github.io/hexo-plugin/</loc>
+    
+    <lastmod>2019-06-23T19:39:02.811Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://NolotyLand.github.io/gallery/index.html</loc>
+    
+    <lastmod>2019-06-22T21:19:27.169Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://NolotyLand.github.io/bug-date/</loc>
+    
+    <lastmod>2019-06-22T21:18:26.635Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://NolotyLand.github.io/hexo/</loc>
+    
+    <lastmod>2019-06-21T23:36:24.717Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://NolotyLand.github.io/hashmap-traverse/</loc>
     
     <lastmod>2019-06-21T20:24:44.917Z</lastmod>
@@ -16,23 +44,9 @@
   </url>
   
   <url>
-    <loc>http://NolotyLand.github.io/bug-date/</loc>
-    
-    <lastmod>2019-06-21T19:04:28.844Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://NolotyLand.github.io/hexo-fix-whitescreen/</loc>
     
     <lastmod>2019-06-14T21:19:05.904Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://NolotyLand.github.io/hexo/</loc>
-    
-    <lastmod>2019-06-14T21:07:26.908Z</lastmod>
     
   </url>
   
