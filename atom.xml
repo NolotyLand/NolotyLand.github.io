@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://NolotyLand.github.io/"/>
-  <updated>2019-06-22T21:18:26.635Z</updated>
+  <updated>2019-06-30T03:14:43.142Z</updated>
   <id>http://NolotyLand.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>无处存放的Tips</title>
+    <link href="http://NolotyLand.github.io/Other-tips/"/>
+    <id>http://NolotyLand.github.io/Other-tips/</id>
+    <published>2019-06-29T16:00:00.000Z</published>
+    <updated>2019-06-30T03:14:43.142Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h1><h2 id="软连接和硬链接"><a href="#软连接和硬链接" class="headerlink" title="软连接和硬链接"></a>软连接和硬链接</h2><h3 id="软连接"><a href="#软连接" class="headerlink" title="软连接"></a>软连接</h3><p>是一个保存了指向文件路径的特殊文件，相当于windows里的快捷方式</p><p>创建语法  ln -s 文件路径 链接名<br>  For Example:</p><blockquote><p>ln -s Noloty-PROJECT/blog/  bloglink</p></blockquote><h3 id="硬链接"><a href="#硬链接" class="headerlink" title="硬链接"></a>硬链接</h3><p>是一个指向文件索引节点(Inode Index)的指针, 当删除文件时, 如果存在指向这个文件的硬链接, 这个文件就不会被真实删除。除非所有硬链接都被删除，这个文件才会被真正删除。所以硬链接有个重要作用就是防误删。</p><p>创建语法  ln 文件路径 链接名</p><p>For Example:</p><blockquote><p>ln Noloty-PROJECT/blog/  bloglink</p></blockquote><h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><p><a href="https://www.cnblogs.com/itech/archive/2009/04/10/1433052.html" target="_blank" rel="noopener">Linux软连接和硬链接</a></p><h2 id="debian修改系统时区"><a href="#debian修改系统时区" class="headerlink" title="debian修改系统时区"></a>debian修改系统时区</h2><p>会记录这个是因为使用Docker安装jenkins之后，发现构建项目时出现的时区不对。<br>而构建时间是使用了docker容器内的系统时区。<br>使用的镜像是debian9系统。</p><p>如果手动修改，可使用下述命令，列出地区任你选择。</p><blockquote><p>dpkg-reconfigure tzdata</p></blockquote><p>此命令会修改两个文件</p><blockquote><p>/etc/timezone #该文本文件可直接修改<br>/etc/localtime #该文件可通过软连接修改</p></blockquote><p>所以如果在脚本里使用命令行修改可使用下述命令</p><blockquote><p>ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime<br>echo Asia/Shanghai &gt; /etc/timezone </p></blockquote><p>另外:</p><blockquote><p>date # 列出当前系统时间<br>date -R # 列出当前系统时区</p></blockquote><h2 id="修改Jenkins的系统时间"><a href="#修改Jenkins的系统时间" class="headerlink" title="修改Jenkins的系统时间"></a>修改Jenkins的系统时间</h2><p>打开 【系统管理】-&gt;【脚本命令行】运行下面的命令</p><blockquote><p>System.setProperty(‘org.apache.commons.jelly.tags.fmt.timeZone’, ‘Asia/Shanghai’)<br>System.setProperty(‘user.timezone’, ‘Asia/Shanghai’)</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Tips&quot;&gt;&lt;a href=&quot;#Tips&quot; class=&quot;headerlink&quot; title=&quot;Tips&quot;&gt;&lt;/a&gt;Tips&lt;/h1&gt;&lt;h2 id=&quot;软连接和硬链接&quot;&gt;&lt;a href=&quot;#软连接和硬链接&quot; class=&quot;headerlink&quot; title=&quot;软连接
+      
+    
+    </summary>
+    
+      <category term="笔记" scheme="http://NolotyLand.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="hide" scheme="http://NolotyLand.github.io/tags/hide/"/>
+    
+      <category term="tips" scheme="http://NolotyLand.github.io/tags/tips/"/>
+    
+  </entry>
   
   <entry>
     <title>错误使用SimpleDateFormat导致的并发bug排查历程</title>
@@ -310,33 +337,6 @@
     
     </summary>
     
-    
-  </entry>
-  
-  <entry>
-    <title>无处存放的Tips</title>
-    <link href="http://NolotyLand.github.io/Other-tips/"/>
-    <id>http://NolotyLand.github.io/Other-tips/</id>
-    <published>2017-06-29T16:00:00.000Z</published>
-    <updated>2019-06-30T02:57:59.508Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h1><h2 id="软连接和硬链接"><a href="#软连接和硬链接" class="headerlink" title="软连接和硬链接"></a>软连接和硬链接</h2><h3 id="软连接"><a href="#软连接" class="headerlink" title="软连接"></a>软连接</h3><p>是一个保存了指向文件路径的特殊文件，相当于windows里的快捷方式</p><p>创建语法  ln -s 文件路径 链接名<br>  For Example:</p><blockquote><p>ln -s Noloty-PROJECT/blog/  bloglink</p></blockquote><h3 id="硬链接"><a href="#硬链接" class="headerlink" title="硬链接"></a>硬链接</h3><p>是一个指向文件索引节点(Inode Index)的指针, 当删除文件时, 如果存在指向这个文件的硬链接, 这个文件就不会被真实删除。除非所有硬链接都被删除，这个文件才会被真正删除。所以硬链接有个重要作用就是防误删。</p><p>创建语法  ln 文件路径 链接名</p><p>For Example:</p><blockquote><p>ln Noloty-PROJECT/blog/  bloglink</p></blockquote><h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><p><a href="https://www.cnblogs.com/itech/archive/2009/04/10/1433052.html" target="_blank" rel="noopener">Linux软连接和硬链接</a></p><h2 id="debian修改系统时区"><a href="#debian修改系统时区" class="headerlink" title="debian修改系统时区"></a>debian修改系统时区</h2><p>会记录这个是因为使用Docker安装jenkins之后，发现构建项目时出现的时区不对。<br>而构建时间是使用了docker容器内的系统时区。<br>使用的镜像是debian9系统。</p><p>如果手动修改，可使用下述命令，列出地区任你选择。</p><blockquote><p>dpkg-reconfigure tzdata</p></blockquote><p>此命令会修改两个文件</p><blockquote><p>/etc/timezone #该文本文件可直接修改<br>/etc/localtime #该文件可通过软连接修改</p></blockquote><p>所以如果在脚本里使用命令行修改可使用下述命令</p><blockquote><p>ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime<br>echo Asia/Shanghai &gt; /etc/timezone </p></blockquote><p>另外:</p><blockquote><p>date # 列出当前系统时间<br>date -R # 列出当前系统时区</p></blockquote><h2 id="修改Jenkins的系统时间"><a href="#修改Jenkins的系统时间" class="headerlink" title="修改Jenkins的系统时间"></a>修改Jenkins的系统时间</h2><p>打开 【系统管理】-&gt;【脚本命令行】运行下面的命令</p><blockquote><p>System.setProperty(‘org.apache.commons.jelly.tags.fmt.timeZone’, ‘Asia/Shanghai’)<br>System.setProperty(‘user.timezone’, ‘Asia/Shanghai’)</p></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;Tips&quot;&gt;&lt;a href=&quot;#Tips&quot; class=&quot;headerlink&quot; title=&quot;Tips&quot;&gt;&lt;/a&gt;Tips&lt;/h1&gt;&lt;h2 id=&quot;软连接和硬链接&quot;&gt;&lt;a href=&quot;#软连接和硬链接&quot; class=&quot;headerlink&quot; title=&quot;软连接
-      
-    
-    </summary>
-    
-      <category term="笔记" scheme="http://NolotyLand.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="hide" scheme="http://NolotyLand.github.io/tags/hide/"/>
-    
-      <category term="tips" scheme="http://NolotyLand.github.io/tags/tips/"/>
     
   </entry>
   
