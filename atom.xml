@@ -74,8 +74,8 @@
   
   <entry>
     <title>错误使用SimpleDateFormat导致的并发bug排查历程</title>
-    <link href="http://NolotyLand.github.io/Bug-date/"/>
-    <id>http://NolotyLand.github.io/Bug-date/</id>
+    <link href="http://NolotyLand.github.io/Bugs-date/"/>
+    <id>http://NolotyLand.github.io/Bugs-date/</id>
     <published>2019-06-20T16:00:00.000Z</published>
     <updated>2019-06-22T21:18:26.635Z</updated>
     
