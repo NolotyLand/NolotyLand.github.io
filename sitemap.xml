@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://NolotyLand.github.io/Tool-Jenkins/</loc>
+    
+    <lastmod>2019-07-03T00:17:09.860Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://NolotyLand.github.io/Other-tips/</loc>
+    
+    <lastmod>2019-07-03T00:17:09.857Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://NolotyLand.github.io/hexo-plugin/</loc>
     
     <lastmod>2019-07-03T00:13:59.664Z</lastmod>
@@ -16,23 +30,9 @@
   </url>
   
   <url>
-    <loc>http://NolotyLand.github.io/Tool-Jenkins/</loc>
-    
-    <lastmod>2019-07-03T00:13:59.657Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://NolotyLand.github.io/Bugs-date/</loc>
     
     <lastmod>2019-07-03T00:13:59.653Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://NolotyLand.github.io/Other-tips/</loc>
-    
-    <lastmod>2019-06-30T03:14:43.142Z</lastmod>
     
   </url>
   
