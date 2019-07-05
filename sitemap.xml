@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://NolotyLand.github.io/Tool-Jenkins/</loc>
+    
+    <lastmod>2019-07-05T11:17:38.428Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://NolotyLand.github.io/Bugs-date/</loc>
     
     <lastmod>2019-07-05T07:47:06.717Z</lastmod>
@@ -26,13 +33,6 @@
     <loc>http://NolotyLand.github.io/hexo-fix-whitescreen/</loc>
     
     <lastmod>2019-07-03T00:21:50.918Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://NolotyLand.github.io/Tool-Jenkins/</loc>
-    
-    <lastmod>2019-07-03T00:18:50.772Z</lastmod>
     
   </url>
   

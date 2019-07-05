@@ -19,7 +19,7 @@ ga('send', 'pageview');</script><meta name="google-site-verification" content="W
 <h1 id="搭建"><a href="#搭建" class="headerlink" title="搭建"></a>搭建</h1><p>机器配置建议内存2G以上<br>虽然官方说256M也可以，但是一构建项目就会发现不够用了</p>
 <p>Dockerfile:</p>
 <blockquote>
-<pre><code># 官方镜像版本太低 所以用了这个版本
+<pre><code># 官方镜像似乎很久没更新了，版本太低，很多插件装不上。所以用了这个版本
    FROM jenkins/jenkins:lts
 
    USER root
