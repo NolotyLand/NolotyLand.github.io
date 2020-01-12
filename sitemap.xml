@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://NolotyLand.github.io/hexo-plugin/</loc>
+    
+    <lastmod>2020-01-12T02:08:18.543Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://NolotyLand.github.io/Note-Kibana-install/</loc>
     
     <lastmod>2020-01-12T02:02:30.130Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>http://NolotyLand.github.io/Note-ElasticSearch-install/</loc>
     
     <lastmod>2020-01-12T02:02:20.921Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://NolotyLand.github.io/hexo-plugin/</loc>
-    
-    <lastmod>2020-01-12T01:57:23.528Z</lastmod>
     
   </url>
   
