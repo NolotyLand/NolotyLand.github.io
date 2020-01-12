@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://NolotyLand.github.io/"/>
-  <updated>2020-01-11T20:09:49.138Z</updated>
+  <updated>2020-01-12T00:49:25.302Z</updated>
   <id>http://NolotyLand.github.io/</id>
   
   <author>
@@ -17,13 +17,13 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>【Elasticsearch】docker安装步骤</title>
-    <link href="http://NolotyLand.github.io/Note-ElasticSearch-install/"/>
-    <id>http://NolotyLand.github.io/Note-ElasticSearch-install/</id>
+    <title>【Kibana】docker安装步骤</title>
+    <link href="http://NolotyLand.github.io/Note-Kibana-install/"/>
+    <id>http://NolotyLand.github.io/Note-Kibana-install/</id>
     <published>2020-01-11T16:00:00.000Z</published>
-    <updated>2020-01-11T20:09:49.138Z</updated>
+    <updated>2020-01-12T00:49:25.302Z</updated>
     
-    <content type="html"><![CDATA[<p>简略记录一下命令</p>  <a id="more"></a><h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><p>拉取镜像</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull elasticsearch:版本号</span><br></pre></td></tr></table></figure><p>运行容器</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -id --name=es -p 9300:9300 -p 9200:9200 elasticsearch:版本号</span><br></pre></td></tr></table></figure><p>运行参数：<br>-p :对宿主机和容器的端口进行映射，冒号前的是宿主机端口，冒号后的是容器端口<br>-d :后台运行<br>-i :打开STDIN，用于控制台交互<br>–name :对容器命名</p><h2 id="验证方式"><a href="#验证方式" class="headerlink" title="验证方式"></a>验证方式</h2><p>浏览器访问 http://宿主机ip:9300<br>或者控制台输入 curl http://宿主机ip:9300<br>如果能正常返回如下图所示的json信息即为安装成功</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;name&quot; : &quot;D2S3pza&quot;,</span><br><span class="line">  &quot;cluster_name&quot; : &quot;elasticsearch&quot;,</span><br><span class="line">  &quot;cluster_uuid&quot; : &quot;DNX8puJET4G6JbcAyM_68Q&quot;,</span><br><span class="line">  &quot;version&quot; : &#123;</span><br><span class="line">    &quot;number&quot; : &quot;6.7.0&quot;,</span><br><span class="line">    &quot;build_flavor&quot; : &quot;default&quot;,</span><br><span class="line">    &quot;build_type&quot; : &quot;docker&quot;,</span><br><span class="line">    &quot;build_hash&quot; : &quot;8453f77&quot;,</span><br><span class="line">    &quot;build_date&quot; : &quot;2019-03-21T15:32:29.844721Z&quot;,</span><br><span class="line">    &quot;build_snapshot&quot; : false,</span><br><span class="line">    &quot;lucene_version&quot; : &quot;7.7.0&quot;,</span><br><span class="line">    &quot;minimum_wire_compatibility_version&quot; : &quot;5.6.0&quot;,</span><br><span class="line">    &quot;minimum_index_compatibility_version&quot; : &quot;5.0.0&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;tagline&quot; : &quot;You Know, for Search&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<p>简略记录一下命令</p>  <a id="more"></a><h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><p>拉取镜像</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull docker.elastic.co/kibana/kibana:7.5.0</span><br></pre></td></tr></table></figure><p>运行容器</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --name mykibana -p 5601:5601 -d docker.elastic.co/kibana/kibana:7.5.0</span><br></pre></td></tr></table></figure><p>运行参数：<br>-p :对宿主机和容器的端口进行映射，冒号前的是宿主机端口，冒号后的是容器端口<br>-d :后台运行<br>–name :对容器命名</p><p>进入容器<br>cd config<br>会看到有名为kibana.yml的配置文件<br>需要把<a href="http://elasticsearch:9200" target="_blank" rel="noopener">http://elasticsearch:9200</a> 修改成正确的ip和端口<br><img src="https://raw.githubusercontent.com/nolopic/pictures/master/20200112084449.png" alt><br>￼</p><h2 id="验证方式"><a href="#验证方式" class="headerlink" title="验证方式"></a>验证方式</h2><p>浏览器访问 http://宿主机ip:5601</p>]]></content>
     
     <summary type="html">
     
@@ -37,13 +37,13 @@
   </entry>
   
   <entry>
-    <title>【Kibana】docker安装步骤</title>
-    <link href="http://NolotyLand.github.io/Note-Kibana-install/"/>
-    <id>http://NolotyLand.github.io/Note-Kibana-install/</id>
+    <title>【Elasticsearch】docker安装步骤</title>
+    <link href="http://NolotyLand.github.io/Note-ElasticSearch-install/"/>
+    <id>http://NolotyLand.github.io/Note-ElasticSearch-install/</id>
     <published>2020-01-11T16:00:00.000Z</published>
-    <updated>2020-01-12T00:49:25.302Z</updated>
+    <updated>2020-01-11T20:09:49.138Z</updated>
     
-    <content type="html"><![CDATA[<p>简略记录一下命令</p>  <a id="more"></a><h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><p>拉取镜像</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull docker.elastic.co/kibana/kibana:7.5.0</span><br></pre></td></tr></table></figure><p>运行容器</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --name mykibana -p 5601:5601 -d docker.elastic.co/kibana/kibana:7.5.0</span><br></pre></td></tr></table></figure><p>运行参数：<br>-p :对宿主机和容器的端口进行映射，冒号前的是宿主机端口，冒号后的是容器端口<br>-d :后台运行<br>–name :对容器命名</p><p>进入容器<br>cd config<br>会看到有名为kibana.yml的配置文件<br>需要把<a href="http://elasticsearch:9200" target="_blank" rel="noopener">http://elasticsearch:9200</a> 修改成正确的ip和端口<br><img src="https://raw.githubusercontent.com/nolopic/pictures/master/20200112084449.png" alt><br>￼</p><h2 id="验证方式"><a href="#验证方式" class="headerlink" title="验证方式"></a>验证方式</h2><p>浏览器访问 http://宿主机ip:5601</p>]]></content>
+    <content type="html"><![CDATA[<p>简略记录一下命令</p>  <a id="more"></a><h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><p>拉取镜像</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull elasticsearch:版本号</span><br></pre></td></tr></table></figure><p>运行容器</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -id --name=es -p 9300:9300 -p 9200:9200 elasticsearch:版本号</span><br></pre></td></tr></table></figure><p>运行参数：<br>-p :对宿主机和容器的端口进行映射，冒号前的是宿主机端口，冒号后的是容器端口<br>-d :后台运行<br>-i :打开STDIN，用于控制台交互<br>–name :对容器命名</p><h2 id="验证方式"><a href="#验证方式" class="headerlink" title="验证方式"></a>验证方式</h2><p>浏览器访问 http://宿主机ip:9300<br>或者控制台输入 curl http://宿主机ip:9300<br>如果能正常返回如下图所示的json信息即为安装成功</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;name&quot; : &quot;D2S3pza&quot;,</span><br><span class="line">  &quot;cluster_name&quot; : &quot;elasticsearch&quot;,</span><br><span class="line">  &quot;cluster_uuid&quot; : &quot;DNX8puJET4G6JbcAyM_68Q&quot;,</span><br><span class="line">  &quot;version&quot; : &#123;</span><br><span class="line">    &quot;number&quot; : &quot;6.7.0&quot;,</span><br><span class="line">    &quot;build_flavor&quot; : &quot;default&quot;,</span><br><span class="line">    &quot;build_type&quot; : &quot;docker&quot;,</span><br><span class="line">    &quot;build_hash&quot; : &quot;8453f77&quot;,</span><br><span class="line">    &quot;build_date&quot; : &quot;2019-03-21T15:32:29.844721Z&quot;,</span><br><span class="line">    &quot;build_snapshot&quot; : false,</span><br><span class="line">    &quot;lucene_version&quot; : &quot;7.7.0&quot;,</span><br><span class="line">    &quot;minimum_wire_compatibility_version&quot; : &quot;5.6.0&quot;,</span><br><span class="line">    &quot;minimum_index_compatibility_version&quot; : &quot;5.0.0&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;tagline&quot; : &quot;You Know, for Search&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
@@ -214,30 +214,6 @@
   </entry>
   
   <entry>
-    <title>解决Hexo中markdown文件生成的HTML页面白屏</title>
-    <link href="http://NolotyLand.github.io/hexo-fix-whitescreen/"/>
-    <id>http://NolotyLand.github.io/hexo-fix-whitescreen/</id>
-    <published>2019-06-13T16:00:00.000Z</published>
-    <updated>2020-01-12T01:15:03.216Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="现象·起因"><a href="#现象·起因" class="headerlink" title="现象·起因"></a>现象·起因</h2><p>   写了几篇文章草稿，本地测试发布发现偶尔会有文章页面白屏，无法加载出任何内容。有时删除或者增加一些字会能够正常加载页面。</p>   <a id="more"></a><p>   <img src="https://raw.githubusercontent.com/NolotyLand/pictures/master/white.png" alt></p><p>   一开始以为是文章内容里有特殊符号与页面渲染插件冲突造成的，但排查了文章内容后，并未发现有比较特殊的符号。<br>   删除一些文字能够正常渲染页面，但这些文字并无特殊之处。</p><p>   检查页面源代码时，才发现原因，原来出问题的页面代码未加载完就被截断了。</p><p>   <img src="https://raw.githubusercontent.com/NolotyLand/pictures/master/20190614015626.png" alt></p><h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>   参考 <a href="https://molunerfinn.com/make-a-hexo-theme/#Bug%E4%BB%A5%E5%8F%8A%E8%A7%A3%E5%86%B3" target="_blank" rel="noopener">Hexo主题开发经验杂谈</a><br>   此问题属于hexo的bug，在中文字符过多时会有几率显现。<br>   在hexo目录下的_config.yml里添加如下配置可以避免：</p><pre><code class="yml"><span class="attr">server:</span><span class="attr">  compress:</span> <span class="literal">true</span> <span class="comment"># 开启压缩</span></code></pre>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;现象·起因&quot;&gt;&lt;a href=&quot;#现象·起因&quot; class=&quot;headerlink&quot; title=&quot;现象·起因&quot;&gt;&lt;/a&gt;现象·起因&lt;/h2&gt;&lt;p&gt;   写了几篇文章草稿，本地测试发布发现偶尔会有文章页面白屏，无法加载出任何内容。有时删除或者增加一些字会能够正常加载页面。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="坑" scheme="http://NolotyLand.github.io/categories/%E5%9D%91/"/>
-    
-    
-      <category term="hexo" scheme="http://NolotyLand.github.io/tags/hexo/"/>
-    
-      <category term="fix" scheme="http://NolotyLand.github.io/tags/fix/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Hexo插件上的踩坑记录</title>
     <link href="http://NolotyLand.github.io/hexo-plugin/"/>
     <id>http://NolotyLand.github.io/hexo-plugin/</id>
@@ -258,6 +234,30 @@
       <category term="hexo" scheme="http://NolotyLand.github.io/tags/hexo/"/>
     
       <category term="gittalk" scheme="http://NolotyLand.github.io/tags/gittalk/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>解决Hexo中markdown文件生成的HTML页面白屏</title>
+    <link href="http://NolotyLand.github.io/hexo-fix-whitescreen/"/>
+    <id>http://NolotyLand.github.io/hexo-fix-whitescreen/</id>
+    <published>2019-06-13T16:00:00.000Z</published>
+    <updated>2020-01-12T01:15:03.216Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="现象·起因"><a href="#现象·起因" class="headerlink" title="现象·起因"></a>现象·起因</h2><p>   写了几篇文章草稿，本地测试发布发现偶尔会有文章页面白屏，无法加载出任何内容。有时删除或者增加一些字会能够正常加载页面。</p>   <a id="more"></a><p>   <img src="https://raw.githubusercontent.com/NolotyLand/pictures/master/white.png" alt></p><p>   一开始以为是文章内容里有特殊符号与页面渲染插件冲突造成的，但排查了文章内容后，并未发现有比较特殊的符号。<br>   删除一些文字能够正常渲染页面，但这些文字并无特殊之处。</p><p>   检查页面源代码时，才发现原因，原来出问题的页面代码未加载完就被截断了。</p><p>   <img src="https://raw.githubusercontent.com/NolotyLand/pictures/master/20190614015626.png" alt></p><h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>   参考 <a href="https://molunerfinn.com/make-a-hexo-theme/#Bug%E4%BB%A5%E5%8F%8A%E8%A7%A3%E5%86%B3" target="_blank" rel="noopener">Hexo主题开发经验杂谈</a><br>   此问题属于hexo的bug，在中文字符过多时会有几率显现。<br>   在hexo目录下的_config.yml里添加如下配置可以避免：</p><pre><code class="yml"><span class="attr">server:</span><span class="attr">  compress:</span> <span class="literal">true</span> <span class="comment"># 开启压缩</span></code></pre>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;现象·起因&quot;&gt;&lt;a href=&quot;#现象·起因&quot; class=&quot;headerlink&quot; title=&quot;现象·起因&quot;&gt;&lt;/a&gt;现象·起因&lt;/h2&gt;&lt;p&gt;   写了几篇文章草稿，本地测试发布发现偶尔会有文章页面白屏，无法加载出任何内容。有时删除或者增加一些字会能够正常加载页面。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="坑" scheme="http://NolotyLand.github.io/categories/%E5%9D%91/"/>
+    
+    
+      <category term="hexo" scheme="http://NolotyLand.github.io/tags/hexo/"/>
+    
+      <category term="fix" scheme="http://NolotyLand.github.io/tags/fix/"/>
     
   </entry>
   
