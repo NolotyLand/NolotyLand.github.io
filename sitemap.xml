@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://NolotyLand.github.io/Note-Kibana-install/</loc>
+    
+    <lastmod>2020-01-12T02:02:30.130Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://NolotyLand.github.io/Note-ElasticSearch-install/</loc>
+    
+    <lastmod>2020-01-12T02:02:20.921Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://NolotyLand.github.io/hexo-plugin/</loc>
+    
+    <lastmod>2020-01-12T01:57:23.528Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://NolotyLand.github.io/Bugs-date/</loc>
     
     <lastmod>2020-01-12T01:23:56.579Z</lastmod>
@@ -12,20 +33,6 @@
     <loc>http://NolotyLand.github.io/hexo-fix-whitescreen/</loc>
     
     <lastmod>2020-01-12T01:15:03.216Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://NolotyLand.github.io/Note-Kibana-install/</loc>
-    
-    <lastmod>2020-01-12T00:49:25.302Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://NolotyLand.github.io/Note-ElasticSearch-install/</loc>
-    
-    <lastmod>2020-01-11T20:09:49.138Z</lastmod>
     
   </url>
   
@@ -68,13 +75,6 @@
     <loc>http://NolotyLand.github.io/hexo/</loc>
     
     <lastmod>2019-07-05T07:42:47.679Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://NolotyLand.github.io/hexo-plugin/</loc>
-    
-    <lastmod>2019-07-05T07:34:30.449Z</lastmod>
     
   </url>
   
