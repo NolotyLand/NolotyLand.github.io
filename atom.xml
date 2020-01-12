@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://NolotyLand.github.io/"/>
-  <updated>2020-01-12T00:48:40.500Z</updated>
+  <updated>2020-01-11T20:09:49.138Z</updated>
   <id>http://NolotyLand.github.io/</id>
   
   <author>
@@ -17,13 +17,13 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>【Kibana】docker安装步骤</title>
-    <link href="http://NolotyLand.github.io/Note-Kibana-install/"/>
-    <id>http://NolotyLand.github.io/Note-Kibana-install/</id>
+    <title>【Elasticsearch】docker安装步骤</title>
+    <link href="http://NolotyLand.github.io/Note-ElasticSearch-install/"/>
+    <id>http://NolotyLand.github.io/Note-ElasticSearch-install/</id>
     <published>2020-01-11T16:00:00.000Z</published>
-    <updated>2020-01-12T00:48:40.500Z</updated>
+    <updated>2020-01-11T20:09:49.138Z</updated>
     
-    <content type="html"><![CDATA[<p>简略记录一下命令</p>  <a id="more"></a><h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><p>拉取镜像</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull docker.elastic.co/kibana/kibana:7.5.0</span><br></pre></td></tr></table></figure><p>运行容器</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --name mykibana -p 5601:5601 -d docker.elastic.co/kibana/kibana:7.5.0</span><br></pre></td></tr></table></figure><p>运行参数：<br>-p :对宿主机和容器的端口进行映射，冒号前的是宿主机端口，冒号后的是容器端口<br>-d :后台运行<br>–name :对容器命名</p><p>进入容器<br>cd config<br>会看到有名为kibana.yml的配置文件<br>需要把<a href="http://elasticsearch:9200" target="_blank" rel="noopener">http://elasticsearch:9200</a> 修改成正确的ip和端口<br><img src="https://raw.githubusercontent.com/nolopic/pictures/master/20200112084449.png" alt><br>￼</p><h2 id="验证方式"><a href="#验证方式" class="headerlink" title="验证方式"></a>验证方式</h2><p>浏览器访问 http://宿主机ip:5601</p>]]></content>
+    <content type="html"><![CDATA[<p>简略记录一下命令</p>  <a id="more"></a><h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><p>拉取镜像</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull elasticsearch:版本号</span><br></pre></td></tr></table></figure><p>运行容器</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -id --name=es -p 9300:9300 -p 9200:9200 elasticsearch:版本号</span><br></pre></td></tr></table></figure><p>运行参数：<br>-p :对宿主机和容器的端口进行映射，冒号前的是宿主机端口，冒号后的是容器端口<br>-d :后台运行<br>-i :打开STDIN，用于控制台交互<br>–name :对容器命名</p><h2 id="验证方式"><a href="#验证方式" class="headerlink" title="验证方式"></a>验证方式</h2><p>浏览器访问 http://宿主机ip:9300<br>或者控制台输入 curl http://宿主机ip:9300<br>如果能正常返回如下图所示的json信息即为安装成功</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;name&quot; : &quot;D2S3pza&quot;,</span><br><span class="line">  &quot;cluster_name&quot; : &quot;elasticsearch&quot;,</span><br><span class="line">  &quot;cluster_uuid&quot; : &quot;DNX8puJET4G6JbcAyM_68Q&quot;,</span><br><span class="line">  &quot;version&quot; : &#123;</span><br><span class="line">    &quot;number&quot; : &quot;6.7.0&quot;,</span><br><span class="line">    &quot;build_flavor&quot; : &quot;default&quot;,</span><br><span class="line">    &quot;build_type&quot; : &quot;docker&quot;,</span><br><span class="line">    &quot;build_hash&quot; : &quot;8453f77&quot;,</span><br><span class="line">    &quot;build_date&quot; : &quot;2019-03-21T15:32:29.844721Z&quot;,</span><br><span class="line">    &quot;build_snapshot&quot; : false,</span><br><span class="line">    &quot;lucene_version&quot; : &quot;7.7.0&quot;,</span><br><span class="line">    &quot;minimum_wire_compatibility_version&quot; : &quot;5.6.0&quot;,</span><br><span class="line">    &quot;minimum_index_compatibility_version&quot; : &quot;5.0.0&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;tagline&quot; : &quot;You Know, for Search&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
@@ -37,13 +37,13 @@
   </entry>
   
   <entry>
-    <title>【Elasticsearch】docker安装步骤</title>
-    <link href="http://NolotyLand.github.io/Note-ElasticSearch-install/"/>
-    <id>http://NolotyLand.github.io/Note-ElasticSearch-install/</id>
+    <title>【Kibana】docker安装步骤</title>
+    <link href="http://NolotyLand.github.io/Note-Kibana-install/"/>
+    <id>http://NolotyLand.github.io/Note-Kibana-install/</id>
     <published>2020-01-11T16:00:00.000Z</published>
-    <updated>2020-01-11T20:09:49.138Z</updated>
+    <updated>2020-01-12T00:49:25.302Z</updated>
     
-    <content type="html"><![CDATA[<p>简略记录一下命令</p>  <a id="more"></a><h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><p>拉取镜像</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull elasticsearch:版本号</span><br></pre></td></tr></table></figure><p>运行容器</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -id --name=es -p 9300:9300 -p 9200:9200 elasticsearch:版本号</span><br></pre></td></tr></table></figure><p>运行参数：<br>-p :对宿主机和容器的端口进行映射，冒号前的是宿主机端口，冒号后的是容器端口<br>-d :后台运行<br>-i :打开STDIN，用于控制台交互<br>–name :对容器命名</p><h2 id="验证方式"><a href="#验证方式" class="headerlink" title="验证方式"></a>验证方式</h2><p>浏览器访问 http://宿主机ip:9300<br>或者控制台输入 curl http://宿主机ip:9300<br>如果能正常返回如下图所示的json信息即为安装成功</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;name&quot; : &quot;D2S3pza&quot;,</span><br><span class="line">  &quot;cluster_name&quot; : &quot;elasticsearch&quot;,</span><br><span class="line">  &quot;cluster_uuid&quot; : &quot;DNX8puJET4G6JbcAyM_68Q&quot;,</span><br><span class="line">  &quot;version&quot; : &#123;</span><br><span class="line">    &quot;number&quot; : &quot;6.7.0&quot;,</span><br><span class="line">    &quot;build_flavor&quot; : &quot;default&quot;,</span><br><span class="line">    &quot;build_type&quot; : &quot;docker&quot;,</span><br><span class="line">    &quot;build_hash&quot; : &quot;8453f77&quot;,</span><br><span class="line">    &quot;build_date&quot; : &quot;2019-03-21T15:32:29.844721Z&quot;,</span><br><span class="line">    &quot;build_snapshot&quot; : false,</span><br><span class="line">    &quot;lucene_version&quot; : &quot;7.7.0&quot;,</span><br><span class="line">    &quot;minimum_wire_compatibility_version&quot; : &quot;5.6.0&quot;,</span><br><span class="line">    &quot;minimum_index_compatibility_version&quot; : &quot;5.0.0&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;tagline&quot; : &quot;You Know, for Search&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<p>简略记录一下命令</p>  <a id="more"></a><h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><p>拉取镜像</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull docker.elastic.co/kibana/kibana:7.5.0</span><br></pre></td></tr></table></figure><p>运行容器</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --name mykibana -p 5601:5601 -d docker.elastic.co/kibana/kibana:7.5.0</span><br></pre></td></tr></table></figure><p>运行参数：<br>-p :对宿主机和容器的端口进行映射，冒号前的是宿主机端口，冒号后的是容器端口<br>-d :后台运行<br>–name :对容器命名</p><p>进入容器<br>cd config<br>会看到有名为kibana.yml的配置文件<br>需要把<a href="http://elasticsearch:9200" target="_blank" rel="noopener">http://elasticsearch:9200</a> 修改成正确的ip和端口<br><img src="https://raw.githubusercontent.com/nolopic/pictures/master/20200112084449.png" alt><br>￼</p><h2 id="验证方式"><a href="#验证方式" class="headerlink" title="验证方式"></a>验证方式</h2><p>浏览器访问 http://宿主机ip:5601</p>]]></content>
     
     <summary type="html">
     
@@ -134,33 +134,6 @@
   </entry>
   
   <entry>
-    <title>错误使用SimpleDateFormat导致的并发bug排查历程</title>
-    <link href="http://NolotyLand.github.io/Bugs-date/"/>
-    <id>http://NolotyLand.github.io/Bugs-date/</id>
-    <published>2019-06-20T16:00:00.000Z</published>
-    <updated>2019-07-08T01:23:07.966Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="现象"><a href="#现象" class="headerlink" title="现象"></a>现象</h1><p>  之前系统自动评价定时任务，偶尔会发生日期错误的现象。<br>  应该是当天评价的，但评价日期的记录却差了几个月。<br>  一开始并未在意，以为是有人处理违规或者举报评价时漏改了时间。<br>  但跟相关者闲聊时才知道，这种情形虽然不常有，但也不能算少，大概隔一两个月就会有一次用户反馈。<br>  仅是用户反馈一两个月就会有一次，未被发现的可能更多，如此稳定的出现频率，这时才令我怀疑起是程序问题。</p><h1 id="探索过程"><a href="#探索过程" class="headerlink" title="探索过程"></a>探索过程</h1><p>  首先要确认是评价创建时便有这种情况，还是创建之后其它程序修改时造成的。<br>  通过日志得知，评价时间在创建时便已经异常了。出现概率大概在1/500~1/1000。<br>  然而整个创建过程逻辑并不复杂，并未发现有什么可疑代码。</p><p>  本着先复现再排查的原则。在测试环境将此定时任务循环跑了几千条，然后不断缩小范围，发现最终原因竟然出现在创建日期使用的工具类上。</p><h1 id="问题原因"><a href="#问题原因" class="headerlink" title="问题原因"></a>问题原因</h1><p>这里写个类模拟当时的情况:</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DateTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> SimpleDateFormat sdf = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy-MM-dd"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">new</span> Thread(() -&gt;&#123;</span><br><span class="line">            <span class="keyword">while</span> (<span class="keyword">true</span>)&#123;</span><br><span class="line">                Date date = <span class="keyword">new</span> Date(<span class="number">1546300800000L</span>);</span><br><span class="line">                String ymd = sdf.format(date);</span><br><span class="line">                <span class="keyword">if</span>(!ymd.equals(<span class="string">"2019-01-01"</span>)) &#123;</span><br><span class="line">                    System.out.println(Thread.currentThread().getName()+ <span class="string">"get wrong date :"</span> + ymd);</span><br><span class="line">                    System.out.println(<span class="string">"-------------------------------------------"</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;, <span class="string">"01 thread "</span>).start();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">new</span> Thread(() -&gt; &#123;</span><br><span class="line">           <span class="keyword">while</span> (<span class="keyword">true</span>)&#123;</span><br><span class="line">               Date date = <span class="keyword">new</span> Date(<span class="number">1549065600000L</span>);</span><br><span class="line">               String ymd = sdf.format(date);</span><br><span class="line">               <span class="keyword">if</span>(!ymd.equals(<span class="string">"2019-02-02"</span>)) &#123;</span><br><span class="line">                   System.out.println(Thread.currentThread().getName()  + <span class="string">"get wrong date :"</span> + ymd);</span><br><span class="line">                   System.out.println(<span class="string">"-------------------------------------------"</span>);</span><br><span class="line">               &#125;</span><br><span class="line">           &#125;</span><br><span class="line">        &#125;,<span class="string">"02 thread "</span>).start();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            Thread.sleep(<span class="number">10000000000L</span>);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>运行输出：</p><pre><code>02 thread get wrong date :2019-02-01-------------------------------------------01 thread get wrong date :2019-01-02-------------------------------------------01 thread get wrong date :2019-02-02-------------------------------------------02 thread get wrong date :2019-02-01-------------------------------------------02 thread get wrong date :2019-01-01-------------------------------------------01 thread get wrong date :2019-01-02-------------------------------------------02 thread get wrong date :2019-02-01-------------------------------------------01 thread get wrong date :2019-01-02-------------------------------------------02 thread get wrong date :2019-02-01-------------------------------------------01 thread get wrong date :2019-01-02-------------------------------------------...</code></pre><p>究其原因，是因为SimpleDateFormat类并非线程安全的类，将其定义为静态变量时，在并发情况下极有可能拿到其它线程的日期数据。<br><a href="https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html" target="_blank" rel="noopener">官网文档</a>也写到，在多线程的情况下，必须在外部进行同步处理。</p><blockquote><p>Synchronization<br>  Date formats are not synchronized. It is recommended to create separate format instances for each thread. If multiple threads access a format concurrently, it must be synchronized externally.</p></blockquote><h1 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h1><p>两种解决方法<br>一种是将静态的SimpleDateFormat改为每次都使用新的对象，如上面格式化日期那一句改成这样:</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Date date = <span class="keyword">new</span> Date(<span class="number">1546300800000L</span>);</span><br><span class="line">String ymd = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy-MM-dd"</span>).format(date);</span><br></pre></td></tr></table></figure><p>另一种是使用JDK8新提供的的日期类，LocalDate或者LocalDateTime代替Date, DateTimeFormatter代替SimpleDateFormat, 简单，优雅，线程安全:</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">LocalDate date = LocalDate.parse(<span class="string">"2019-02-02"</span>);</span><br><span class="line">String ymd = date.format(DateTimeFormatter.ofPattern(<span class="string">"yyyy-MM-dd"</span>));</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;现象&quot;&gt;&lt;a href=&quot;#现象&quot; class=&quot;headerlink&quot; title=&quot;现象&quot;&gt;&lt;/a&gt;现象&lt;/h1&gt;&lt;p&gt;  之前系统自动评价定时任务，偶尔会发生日期错误的现象。&lt;br&gt;  应该是当天评价的，但评价日期的记录却差了几个月。&lt;br&gt;  一开始并未在
-      
-    
-    </summary>
-    
-      <category term="bug" scheme="http://NolotyLand.github.io/categories/bug/"/>
-    
-    
-      <category term="hide" scheme="http://NolotyLand.github.io/tags/hide/"/>
-    
-      <category term="bug" scheme="http://NolotyLand.github.io/tags/bug/"/>
-    
-  </entry>
-  
-  <entry>
     <title>HashMap的各种遍历方式</title>
     <link href="http://NolotyLand.github.io/JI-hashmap-traverse/"/>
     <id>http://NolotyLand.github.io/JI-hashmap-traverse/</id>
@@ -184,6 +157,28 @@
       <category term="hide" scheme="http://NolotyLand.github.io/tags/hide/"/>
     
       <category term="java" scheme="http://NolotyLand.github.io/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【踩坑】错误使用SimpleDateFormat导致的并发bug排查历程</title>
+    <link href="http://NolotyLand.github.io/Bugs-date/"/>
+    <id>http://NolotyLand.github.io/Bugs-date/</id>
+    <published>2019-06-20T16:00:00.000Z</published>
+    <updated>2020-01-12T01:22:46.838Z</updated>
+    
+    <content type="html"><![CDATA[<p>  踩坑记录下<br>  <a id="more"></a></p><h1 id="现象"><a href="#现象" class="headerlink" title="现象"></a>现象</h1><p>  之前某系统定时任务程序，偶尔会发生日期错误的现象。<br>  应该是当天记录的信息，但展示的日期却差了几个月。</p><h1 id="探索过程"><a href="#探索过程" class="headerlink" title="探索过程"></a>探索过程</h1><p>  首先要确认是信息创建时便有这种情况，还是创建之后其它程序修改时造成的。<br>  通过日志得知，时间在创建时便已经异常了。出现概率大概在1/500~1/1000。<br>  然而整个创建过程逻辑并不复杂，并未发现有什么可疑代码。</p><p>  本着先复现再排查的原则。在测试环境将此定时任务循环跑了几千条，然后不断缩小范围，发现最终原因出现在创建日期使用的工具类上。</p><h1 id="问题原因"><a href="#问题原因" class="headerlink" title="问题原因"></a>问题原因</h1><p>这里写个类模拟当时的情况:</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DateTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> SimpleDateFormat sdf = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy-MM-dd"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">new</span> Thread(() -&gt;&#123;</span><br><span class="line">            <span class="keyword">while</span> (<span class="keyword">true</span>)&#123;</span><br><span class="line">                Date date = <span class="keyword">new</span> Date(<span class="number">1546300800000L</span>);</span><br><span class="line">                String ymd = sdf.format(date);</span><br><span class="line">                <span class="keyword">if</span>(!ymd.equals(<span class="string">"2019-01-01"</span>)) &#123;</span><br><span class="line">                    System.out.println(Thread.currentThread().getName()+ <span class="string">"get wrong date :"</span> + ymd);</span><br><span class="line">                    System.out.println(<span class="string">"-------------------------------------------"</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;, <span class="string">"01 thread "</span>).start();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">new</span> Thread(() -&gt; &#123;</span><br><span class="line">           <span class="keyword">while</span> (<span class="keyword">true</span>)&#123;</span><br><span class="line">               Date date = <span class="keyword">new</span> Date(<span class="number">1549065600000L</span>);</span><br><span class="line">               String ymd = sdf.format(date);</span><br><span class="line">               <span class="keyword">if</span>(!ymd.equals(<span class="string">"2019-02-02"</span>)) &#123;</span><br><span class="line">                   System.out.println(Thread.currentThread().getName()  + <span class="string">"get wrong date :"</span> + ymd);</span><br><span class="line">                   System.out.println(<span class="string">"-------------------------------------------"</span>);</span><br><span class="line">               &#125;</span><br><span class="line">           &#125;</span><br><span class="line">        &#125;,<span class="string">"02 thread "</span>).start();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            Thread.sleep(<span class="number">10000000000L</span>);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>运行输出：</p><pre><code>02 thread get wrong date :2019-02-01-------------------------------------------01 thread get wrong date :2019-01-02-------------------------------------------01 thread get wrong date :2019-02-02-------------------------------------------02 thread get wrong date :2019-02-01-------------------------------------------02 thread get wrong date :2019-01-01-------------------------------------------01 thread get wrong date :2019-01-02-------------------------------------------02 thread get wrong date :2019-02-01-------------------------------------------01 thread get wrong date :2019-01-02-------------------------------------------02 thread get wrong date :2019-02-01-------------------------------------------01 thread get wrong date :2019-01-02-------------------------------------------...</code></pre><p>究其原因，是因为SimpleDateFormat类并非线程安全的类，将其定义为静态变量时，在并发情况下极有可能拿到其它线程的日期数据。<br><a href="https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html" target="_blank" rel="noopener">官网文档</a>也写到，在多线程的情况下，必须在外部进行同步处理。</p><blockquote><p>Synchronization<br>  Date formats are not synchronized. It is recommended to create separate format instances for each thread. If multiple threads access a format concurrently, it must be synchronized externally.</p></blockquote><h1 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h1><p>两种解决方法<br>一种是将静态的SimpleDateFormat改为每次都使用新的对象，如上面格式化日期那一句改成这样:</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Date date = <span class="keyword">new</span> Date(<span class="number">1546300800000L</span>);</span><br><span class="line">String ymd = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy-MM-dd"</span>).format(date);</span><br></pre></td></tr></table></figure><p>另一种是使用JDK8新提供的的日期类，LocalDate或者LocalDateTime代替Date, DateTimeFormatter代替SimpleDateFormat, 简单，优雅，线程安全:</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">LocalDate date = LocalDate.parse(<span class="string">"2019-02-02"</span>);</span><br><span class="line">String ymd = date.format(DateTimeFormatter.ofPattern(<span class="string">"yyyy-MM-dd"</span>));</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;  踩坑记录下&lt;br&gt;
+    
+    </summary>
+    
+      <category term="bug" scheme="http://NolotyLand.github.io/categories/bug/"/>
+    
+    
+      <category term="bug" scheme="http://NolotyLand.github.io/tags/bug/"/>
     
   </entry>
   
@@ -219,6 +214,30 @@
   </entry>
   
   <entry>
+    <title>解决Hexo中markdown文件生成的HTML页面白屏</title>
+    <link href="http://NolotyLand.github.io/hexo-fix-whitescreen/"/>
+    <id>http://NolotyLand.github.io/hexo-fix-whitescreen/</id>
+    <published>2019-06-13T16:00:00.000Z</published>
+    <updated>2020-01-12T01:15:03.216Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="现象·起因"><a href="#现象·起因" class="headerlink" title="现象·起因"></a>现象·起因</h2><p>   写了几篇文章草稿，本地测试发布发现偶尔会有文章页面白屏，无法加载出任何内容。有时删除或者增加一些字会能够正常加载页面。</p>   <a id="more"></a><p>   <img src="https://raw.githubusercontent.com/NolotyLand/pictures/master/white.png" alt></p><p>   一开始以为是文章内容里有特殊符号与页面渲染插件冲突造成的，但排查了文章内容后，并未发现有比较特殊的符号。<br>   删除一些文字能够正常渲染页面，但这些文字并无特殊之处。</p><p>   检查页面源代码时，才发现原因，原来出问题的页面代码未加载完就被截断了。</p><p>   <img src="https://raw.githubusercontent.com/NolotyLand/pictures/master/20190614015626.png" alt></p><h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>   参考 <a href="https://molunerfinn.com/make-a-hexo-theme/#Bug%E4%BB%A5%E5%8F%8A%E8%A7%A3%E5%86%B3" target="_blank" rel="noopener">Hexo主题开发经验杂谈</a><br>   此问题属于hexo的bug，在中文字符过多时会有几率显现。<br>   在hexo目录下的_config.yml里添加如下配置可以避免：</p><pre><code class="yml"><span class="attr">server:</span><span class="attr">  compress:</span> <span class="literal">true</span> <span class="comment"># 开启压缩</span></code></pre>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;现象·起因&quot;&gt;&lt;a href=&quot;#现象·起因&quot; class=&quot;headerlink&quot; title=&quot;现象·起因&quot;&gt;&lt;/a&gt;现象·起因&lt;/h2&gt;&lt;p&gt;   写了几篇文章草稿，本地测试发布发现偶尔会有文章页面白屏，无法加载出任何内容。有时删除或者增加一些字会能够正常加载页面。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="坑" scheme="http://NolotyLand.github.io/categories/%E5%9D%91/"/>
+    
+    
+      <category term="hexo" scheme="http://NolotyLand.github.io/tags/hexo/"/>
+    
+      <category term="fix" scheme="http://NolotyLand.github.io/tags/fix/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Hexo插件上的踩坑记录</title>
     <link href="http://NolotyLand.github.io/hexo-plugin/"/>
     <id>http://NolotyLand.github.io/hexo-plugin/</id>
@@ -239,30 +258,6 @@
       <category term="hexo" scheme="http://NolotyLand.github.io/tags/hexo/"/>
     
       <category term="gittalk" scheme="http://NolotyLand.github.io/tags/gittalk/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>解决Hexo中markdown文件生成的HTML页面白屏</title>
-    <link href="http://NolotyLand.github.io/hexo-fix-whitescreen/"/>
-    <id>http://NolotyLand.github.io/hexo-fix-whitescreen/</id>
-    <published>2019-06-13T16:00:00.000Z</published>
-    <updated>2019-07-03T00:21:50.918Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="现象·起因"><a href="#现象·起因" class="headerlink" title="现象·起因"></a>现象·起因</h2><p>   写了几篇文章草稿，本地测试发布发现偶尔会有文章页面白屏，无法加载出任何内容。有时删除或者增加一些字会能够正常加载页面。</p>   <a id="more"></a><p>   <img src="https://raw.githubusercontent.com/NolotyLand/pictures/master/white.png" alt></p><p>   一开始以为是文章内容里有特殊符号与页面渲染插件冲突造成的，但排查了文章内容后，并未发现有比较特殊的符号。<br>   删除一些文字能够正常渲染页面，但这些文字并无特殊之处。</p><p>   检查页面源代码时，终于发现原因，原来出问题的页面代码未加载完就被截断了。</p><p>   <img src="https://raw.githubusercontent.com/NolotyLand/pictures/master/20190614015626.png" alt></p><h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>   参考 <a href="https://molunerfinn.com/make-a-hexo-theme/#Bug%E4%BB%A5%E5%8F%8A%E8%A7%A3%E5%86%B3" target="_blank" rel="noopener">Hexo主题开发经验杂谈</a><br>   此问题属于hexo的bug，在中文字符过多时会有几率显现。<br>   在hexo目录下的_config.yml里添加如下配置可以避免：</p><pre><code class="yml"><span class="attr">server:</span><span class="attr">  compress:</span> <span class="literal">true</span> <span class="comment"># 开启压缩</span></code></pre>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;现象·起因&quot;&gt;&lt;a href=&quot;#现象·起因&quot; class=&quot;headerlink&quot; title=&quot;现象·起因&quot;&gt;&lt;/a&gt;现象·起因&lt;/h2&gt;&lt;p&gt;   写了几篇文章草稿，本地测试发布发现偶尔会有文章页面白屏，无法加载出任何内容。有时删除或者增加一些字会能够正常加载页面。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="坑" scheme="http://NolotyLand.github.io/categories/%E5%9D%91/"/>
-    
-    
-      <category term="hexo" scheme="http://NolotyLand.github.io/tags/hexo/"/>
-    
-      <category term="fix" scheme="http://NolotyLand.github.io/tags/fix/"/>
     
   </entry>
   
@@ -314,29 +309,6 @@
       <category term="hide" scheme="http://NolotyLand.github.io/tags/hide/"/>
     
       <category term="java8" scheme="http://NolotyLand.github.io/tags/java8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Welcome to Noloty Land</title>
-    <link href="http://NolotyLand.github.io/test-ariticle/"/>
-    <id>http://NolotyLand.github.io/test-ariticle/</id>
-    <published>2019-05-31T16:00:00.000Z</published>
-    <updated>2019-06-13T15:07:53.790Z</updated>
-    
-    <content type="html"><![CDATA[<p> 拉普兰德梗图</p><p><img src="https://raw.githubusercontent.com/NolotyLand/pictures/master/lap.jpg" alt></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt; 拉普兰德梗图&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/NolotyLand/pictures/master/lap.jpg&quot; alt&gt;&lt;/p&gt;
-
-      
-    
-    </summary>
-    
     
   </entry>
   
@@ -415,6 +387,29 @@
     </summary>
     
       <category term="笔记" scheme="http://NolotyLand.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Welcome to Noloty Land</title>
+    <link href="http://NolotyLand.github.io/test-ariticle/"/>
+    <id>http://NolotyLand.github.io/test-ariticle/</id>
+    <published>2019-05-31T16:00:00.000Z</published>
+    <updated>2019-06-13T15:07:53.790Z</updated>
+    
+    <content type="html"><![CDATA[<p> 拉普兰德梗图</p><p><img src="https://raw.githubusercontent.com/NolotyLand/pictures/master/lap.jpg" alt></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt; 拉普兰德梗图&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/NolotyLand/pictures/master/lap.jpg&quot; alt&gt;&lt;/p&gt;
+
+      
+    
+    </summary>
     
     
   </entry>
