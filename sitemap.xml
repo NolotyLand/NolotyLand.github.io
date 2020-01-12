@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://NolotyLand.github.io/Note-Kibana-install/</loc>
+    
+    <lastmod>2020-01-12T00:48:40.500Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://NolotyLand.github.io/Note-ElasticSearch-install/</loc>
     
     <lastmod>2020-01-11T20:09:49.138Z</lastmod>
